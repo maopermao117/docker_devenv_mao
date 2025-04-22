@@ -16,16 +16,18 @@ services:
 
   web:
     build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     ports:
     #前がホスト側、後ろがコンテナ側.ホスト側のポート埋まってたら変えてね！
     #デフォルトは3000:3000
-      - "3001:3000"
+      - "3000:3000"
     depends_on:
       - db
     #ここで必ずローカルの開発コピーディレクトリを指定する！
     volumes:
-      - /Users/mao/Desktop/rails_dev:/app
-      - ./rails-template:/rails-template
+      - /Users/mao/Desktop/rails_dev_test:/app_dev
+      #データベースの設定しなくていいようにしてるから、こっちは絶対触らない.
+      - ./rails-temp:/rails-temp
     #ここは変えないで！ユーザー名とパスワードは指定してある.本番環境まで触らない 
     environment:
       DATABASE_HOST: db

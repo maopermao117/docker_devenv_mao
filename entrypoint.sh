@@ -4,8 +4,12 @@ set -e
 # Railsアプリがまだ無いなら作るここは変更しない.
 if [ ! -f "Gemfile" ]; then
   echo "Rails app not found. Creating..."
-  rails new . --force --no-deps --database=postgresql --skip-docker
-  cp /rails-template/config/database.yml ./config/database.yml
+  rails new . --force --no-deps --database=postgresql --skip-docker --css=tailwind
+  cp /rails-temp/database.yml ./config/database.yml
+  #tailwind設定用ファイル.
+  cp /rails-temp/application.tailwind.css ./app/assets/stylesheets/application.tailwind.css
+  #説明ファイルのコピー
+  cp /rails-temp/Tailwind導入解説.md ./
 fi
 
 # 毎回Railsサーバー起動前にpidファイル削除（←ここは毎回必要）
