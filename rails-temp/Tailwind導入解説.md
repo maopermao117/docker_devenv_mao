@@ -1,30 +1,31 @@
-# Tailwind CSS 導入解説（Rails用）
+# Tailwind CSS 導入解説（Rails 用）
 
-## 🌟 Tailwind CSSとは？
+## 🌟 Tailwind CSS とは？
 
-Tailwind CSSは「ユーティリティファースト」のCSSフレームワークです。  
-従来のようにCSSクラスを自作するのではなく、事前に用意された小さなユーティリティクラスを組み合わせてUIを構築します。
+Tailwind CSS は「ユーティリティファースト」の CSS フレームワークです。  
+従来のように CSS クラスを自作するのではなく、事前に用意された小さなユーティリティクラスを組み合わせて UI を構築します。
 
-### ✅ Tailwindを使うメリット
+### ✅ Tailwind を使うメリット
 
-- **CSSを書かずにデザインできる**  
-  HTML中に直接スタイル指定できるので、CSSファイルが散らからない。
-  
+- **CSS を書かずにデザインできる**  
+  HTML 中に直接スタイル指定できるので、CSS ファイルが散らからない。
 - **クラス名で即見た目が分かる**  
   例えば `bg-red-500 text-white rounded-lg` のように、どんな見た目かがクラス名で一目瞭然。
 
 - **レスポンシブも簡単**  
   `sm:`, `md:`, `lg:` などでレスポンシブ対応もすぐに可能。
 
-- **Railsとの親和性も高い**  
-  `tailwindcss-rails` というGemで簡単にRailsプロジェクトに統合できる。
+- **Rails との親和性も高い**  
+  `tailwindcss-rails` という Gem で簡単に Rails プロジェクトに統合できる。
 
 ---
 
-## 🛠️ Tailwind導入手順
+## 🛠️ Tailwind 導入手順
 
-以下のコマンドをなぜか２回実行してください、、、じゃないとなぜか使えません、、、
+自動でインストールする設定にしていますが、動かないなら以下をコピペして貼り付けて
 
+```bash
 ./bin/bundle add tailwindcss-ruby
 ./bin/bundle add tailwindcss-rails
 ./bin/rails tailwindcss:install
+```

@@ -1,0 +1,37 @@
+{
+  "auto-close-tag.activationOnLanguage": ["html", "erb"],
+  "emmet.includeLanguages": {
+    "erb": "html",
+    "html.erb": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "auto-rename-tag.activationOnLanguage": ["*"],
+  "tailwindCSS.experimental.configFile": "./tailwind.config.js",
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "erb": "html",
+    "html.erb": "html"
+  },
+  "files.associations": {
+    "*.html.erb": "html",
+    "*.tailwind.css": "css"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.suggest.showWords": true,
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "trailing-spaces.includeEmptyLines": false,
+  "rubyLsp.enabled": true,
+  "rubyLsp.useBundler": true,
+  "workbench.iconTheme": "material-icon-theme"
+}
