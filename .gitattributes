@@ -1,0 +1,19 @@
+# === 改行コードの強制設定（LF）これないとOS違うとバグる ===
+
+# スクリプトやコード系
+*.sh text eol=lf
+*.rb text eol=lf
+*.js text eol=lf
+
+# 設定ファイル系
+*.yml text eol=lf
+*.json text eol=lf
+Dockerfile text eol=lf
+
+# フロントエンド系
+*.css text eol=lf
+*.html text eol=lf
+*.erb text eol=lf
+
+# ドキュメント系
+*.md text eol=lf

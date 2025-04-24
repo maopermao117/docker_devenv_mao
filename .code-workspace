@@ -1,0 +1,72 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "auto-close-tag.activationOnLanguage": [
+      "html",
+      "erb"
+    ],
+    "emmet.includeLanguages": {
+      "erb": "html",
+      "html.erb": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "auto-rename-tag.activationOnLanguage": ["*"],
+    "tailwindCSS.experimental.configFile": "./tailwind.config.js",
+    "tailwindCSS.includeLanguages": {
+      "html": "html",
+      "erb": "html",
+      "html.erb": "html"
+    },
+    "files.associations": {
+      "*.html.erb": "html",
+      "*.tailwind.css": "css"
+    },
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.showWords": true,
+    "editor.formatOnSave": true,
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "trailing-spaces.includeEmptyLines": false,
+    "rubyLsp.enabled": true,
+    "rubyLsp.useBundler": true,
+    "files.eol": "\n"
+  },
+	"extensions": {
+		"recommendations": [
+			"ms-vscode-remote.remote-containers",
+			"ms-azuretools.vscode-docker",
+			"docker.docker",
+			"bradlc.vscode-tailwindcss",
+			"bung87.rails",
+			"bung87.vscode-gemfile",
+			"christian-kohler.path-intellisense",
+			"donjayamanne.githistory",
+			"ecmel.vscode-html-css",
+			"esbenp.prettier-vscode",
+			"formulahendry.auto-close-tag",
+			"formulahendry.auto-rename-tag",
+			"github.copilot",
+			"github.copilot-chat",
+			"mechatroner.rainbow-csv",
+			"ms-ceintl.vscode-language-pack-ja",
+			"oderwat.indent-rainbow",
+			"redhat.vscode-yaml",
+			"shardulm94.trailing-spaces",
+			"shopify.ruby-lsp",
+			"sianglim.slim"
+		]
+	}
+}

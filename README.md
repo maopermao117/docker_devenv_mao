@@ -56,6 +56,26 @@ VSCode をインストールした直後は、**英語表示**になっていま
 Windows で Docker を使うには、まず「WSL2（Windows Subsystem for Linux 2）」を有効にする必要があるよ。
 順番を間違えると Docker Desktop が起動できずにエラーになるので、必ず下記の流れで進めてね！
 
+#### ✅ STEP 1：PowerShell 　をインストール
+
+1. 公式サイトにアクセス  
+   👉 [PowerShell GitHub 公式リリースページ](https://github.com/PowerShell/PowerShell/releases/latest)
+2. ページ内から自分の環境にあったインストーラーを選びます：
+
+- Windows 用 `.msi` インストーラー（例：`PowerShell-7.x.x-win-x64.msi`）を選択
+
+3. ダウンロードした `.msi` をダブルクリックしてインストール開始
+   - 途中はすべて「次へ」で OK です（特別な設定は不要）
+4. インストールが完了したら、スタートメニューで「PowerShell 7」と検索して起動！
+
+5. PowerShell 7 を開いて、以下のコマンドを入力してバージョン確認：
+
+```bash
+$PSVersionTable.PSVersion
+```
+
+> ✅ バージョンが 7.x.x になっていれば準備完了！
+
 #### ✅ STEP 1：WSL2 をインストール
 
 1. スタートボタンを右クリック
@@ -169,21 +189,31 @@ git --version
 ### ◾ Windows の人
 
 1. 下記のリンクから Git for Windows をダウンロードしてください：  
-   👉 [Git for Windows（公式）](https://git-scm.com/download/win)
+    👉 [Git for Windows（公式）](https://git-scm.com/download/win)
 
-2. インストーラーを起動し、**基本はすべて「次へ」で OK**。特に設定を変更しなくても使えます。
+   > 基本 **64-bit Git for Windows Setup** を選択！
 
-3. インストール後に `PowerShell` または `コマンドプロンプト` を開き、以下のコマンドで確認：
+2. インストーラー **（Git-x.x.x-64-bit.exe）** を起動
 
-   ```bash
-   git --version
-   ```
+3. 「Adjusting your PATH environment（PATH 環境変数の調整）」という画面が表示されるので、以下を必ず選択してください：
 
-   出力例：
+✅ Git from the command line and also from 3rd-party software
 
-   ```
-   git version 2.43.0.windows.1
-   ```
+> 🔺 これを選ばないと、VSCode や PowerShell から git が認識されません！
+
+4. その他の設定は基本的に「次へ」で問題なし
+
+5. インストール後に `PowerShell` を開き、以下のコマンドで確認：
+
+```bash
+git --version
+```
+
+出力例：
+
+```
+git version 2.43.0.windows.1
+```
 
 > ✅ このようにバージョンが表示されれば、Git のインストール完了です！あとちょっと！！
 
@@ -268,10 +298,10 @@ git clone https://github.com/maopermao117/docker_devenv_mao.git .
    表示例
 
 ```bash
-(base) mao@〇〇 rails_setup %
+PS C:\Users\mao\Documents\rails_setup>
 ```
 
-> (base) mao@〇〇　この後ろに自分がいるディレクトリ（フォルダー）が表示されるよ！！大切！！
+> **>**の直前に自分がいるディレクトリ（フォルダー）が表示されるよディレクトリ！！大切！！
 
 #### 🔽 GitHub からテンプレートをクローンする
 
@@ -288,7 +318,7 @@ git clone https://github.com/maopermao117/docker_devenv_mao.git .
 
 #### 🛠 ターミナルが使えない場合の代替方法（mkdir で作成）
 
-どうしても VSCode の操作が不安な場合は、ターミナルから直接作成しても OK です：(できる限り VSCode 使ってやってみてね！)
+どうしても VSCode の操作が不安な場合は、PowerShell から直接作成しても OK です：(できる限り VSCode 使ってやってみてね！)
 
 ```bash
 mkdir "$env:USERPROFILE\Documents\rails_setup"
@@ -308,8 +338,13 @@ volumes:
 
 この前半の `/Users/mao/Documents/rails_dev` の部分は、自分のパソコンに作った開発フォルダのパスに必ず変更して!
 
-- Mac の人 → Finder でフォルダを右クリック → パスをコピー
-- Windows の人 → フォルダをエクスプローラーで開いてパスをコピー
+#### Mac の人 → Finder でフォルダを右クリック → パスをコピー
+
+> - /Users/名前/Documents/rails_dev:/app_dev って感じになるかな（名前の部分は変更して、パスも確認してね！）
+
+#### Windows の人 → フォルダをエクスプローラーで開いてパスをコピー
+
+> - C:\Users\名前\Documents\rails_dev:/app_dev って感じになるかな（名前の部分は変更して、パスも確認してね！）
 
 ---
 
@@ -371,4 +406,4 @@ docker compose up --build
 ## 作成者
 
 和田ゼミ生：まお
-更新日：2025 年 4 月 16 日
+更新日：2025 年 4 月 24 日

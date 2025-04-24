@@ -15,9 +15,10 @@ if [ ! -f "Gemfile" ]; then
   #homeコントローラーのコピー
   cp /rails-temp/home_controller.rb ./app/controllers/home_controller.rb
   #hellow.html.erbのコピー
+  mkdir -p ./app/views/home
   cp /rails-temp/hellow.html.erb ./app/views/home/hellow.html.erb
   #通常のapplication.cssを削除（Tailwind使うなら必要ないからね）
-  rm ./app/assets/stylesheets/application.css
+  [ -f ./app/assets/stylesheets/application.css ] && rm ./app/assets/stylesheets/application.css
 fi
 
 # 毎回Railsサーバー起動前にpidファイル削除（←ここは毎回必要）
