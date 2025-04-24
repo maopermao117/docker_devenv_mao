@@ -8,6 +8,7 @@ if [ ! -f "Gemfile" ]; then
   # VSCode設定フォルダがなければ作成してからコピー
   mkdir -p .vscode
   cp /rails-temp/.vscode/settings.json .vscode/settings.json
+  cp /rails-temp/.vscode/extensions.json .vscode/extensions.json
   #データベース設定ファイルのコピー
   cp /rails-temp/database.yml ./config/database.yml
   #tailwind設定用ファイル.
