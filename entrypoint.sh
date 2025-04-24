@@ -5,6 +5,10 @@ set -e
 if [ ! -f "Gemfile" ]; then
   echo "Rails app not found. Creating..."
   rails new . --force --no-deps --database=postgresql --skip-docker --css=tailwind
+  # VSCode設定フォルダがなければ作成してからコピー
+  mkdir -p .vscode
+  cp /rails-temp/.vscode/settings.json .vscode/settings.json
+  #データベース設定ファイルのコピー
   cp /rails-temp/database.yml ./config/database.yml
   #tailwind設定用ファイル.
   cp /rails-temp/application.tailwind.css ./app/assets/stylesheets/application.tailwind.css
