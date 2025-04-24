@@ -23,8 +23,8 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    #ここで必ずローカルの開発コピーディレクトリを指定する！
     volumes:
+      #ここで必ずローカルの開発コピーディレクトリを指定する！
       - /Users/mao/Desktop/rails_dev_test:/app_dev
       #データベースの設定しなくていいようにしてるから、こっちは絶対触らない.
       - ./rails-temp:/rails-temp

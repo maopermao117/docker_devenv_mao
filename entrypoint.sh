@@ -10,6 +10,14 @@ if [ ! -f "Gemfile" ]; then
   cp /rails-temp/application.tailwind.css ./app/assets/stylesheets/application.tailwind.css
   #説明ファイルのコピー
   cp /rails-temp/Tailwind導入解説.md ./
+  #ルーティングファイルのコピー
+  cp /rails-temp/routes.rb ./config/routes.rb
+  #homeコントローラーのコピー
+  cp /rails-temp/home_controller.rb ./app/controllers/home_controller.rb
+  #hellow.html.erbのコピー
+  cp /rails-temp/hellow.html.erb ./app/views/home/hellow.html.erb
+  #通常のapplication.cssを削除（Tailwind使うなら必要ないからね）
+  rm ./app/assets/stylesheets/application.css
 fi
 
 # 毎回Railsサーバー起動前にpidファイル削除（←ここは毎回必要）

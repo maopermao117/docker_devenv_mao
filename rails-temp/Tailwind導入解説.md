@@ -28,16 +28,3 @@ Tailwind CSSは「ユーティリティファースト」のCSSフレームワ�
 ./bin/bundle add tailwindcss-ruby
 ./bin/bundle add tailwindcss-rails
 ./bin/rails tailwindcss:install
-
-##　コントローラーとルーティング設定が終わったら動くか試してみて
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-
-  <div class="bg-white p-6 rounded-xl shadow-lg space-y-4 text-center">
-    <h1 class="text-2xl font-bold text-blue-600">Tailwind CSS テストページ</h1>
-    <p class="text-gray-600">Tailwind CSSが正しく動いていれば、レイアウトや色が整っています。</p>
-    <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition">
-      テストボタン
-    </button>
-  </div>
-
-</body>

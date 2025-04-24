@@ -1,0 +1,46 @@
+{
+	"auto-close-tag.activationOnLanguage": [
+		"html",
+		"erb"
+	],
+	"emmet.includeLanguages": {
+		"erb": "html",
+		"html.erb": "html"
+	},
+	"emmet.triggerExpansionOnTab": true,
+	"auto-rename-tag.activationOnLanguage": [
+		"*"
+	],
+	"tailwindCSS.experimental.configFile": "./tailwind.config.js",
+	// Tailwind CSS 補完対象言語の指定
+	"tailwindCSS.includeLanguages": {
+		"html": "html",
+		"erb": "html",
+		"html.erb": "html"
+	},
+	// .html.erb を HTMLとして扱う（Tailwind補完やEmmet用）
+	"files.associations": {
+		"*.html.erb": "html",
+		"*.tailwind.css": "css"
+	},
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"editor.suggest.showWords": true,
+	// 保存時に自動フォーマット（Prettier対応）
+	"editor.formatOnSave": true,
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	// 行末スペースの可視化
+	"trailing-spaces.includeEmptyLines": false,
+	// Ruby LSP 関連の設定（Shopify Ruby LSP）
+	"rubyLsp.enabled": true,
+	"rubyLsp.useBundler": true
+}
