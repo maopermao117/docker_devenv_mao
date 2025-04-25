@@ -3,7 +3,6 @@
         "ms-vscode-remote.remote-containers",
         "ms-azuretools.vscode-docker",
         "docker.docker",
-        "bradlc.vscode-tailwindcss",
         "bung87.rails",
         "bung87.vscode-gemfile",
         "christian-kohler.path-intellisense",

@@ -11,7 +11,6 @@
 - Ruby 3.2.8
 - Rails 7.1.3
 - PostgreSQL 15
-- Tailwind CSS v4（Rails 初期導入済み）
 - Docker + Docker Compose を使用
 - 初回実行時に `rails new` でアプリ自動作成！
 

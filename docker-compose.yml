@@ -25,7 +25,7 @@ services:
       - db
     volumes:
       #ここで必ずローカルの開発コピーディレクトリを指定する！
-      #- /Users/mao/Desktop/rails_dev_test:/app_dev
+      - /Users/mao/Desktop/rails_dev_test:/app_dev
       #データベースの設定しなくていいようにしてるから、こっちは絶対触らない.
       - ./rails-temp:/rails-temp
     #ここは変えないで！ユーザー名とパスワードは指定してある.本番環境まで触らない
