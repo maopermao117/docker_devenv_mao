@@ -14,9 +14,6 @@
 - Docker + Docker Compose を使用
 - 初回実行時に `rails new` でアプリ自動作成！
 
-> 🎨 Tailwind CSS は `rails new` 時に `--css=tailwind` オプションで導入済み。  
-> 最新版の v4 をベースにしており、デザインカスタマイズがすぐに始められます。
-
 ---
 
 ## 🧑‍💻 まず最初に VSCode をインストールしよう
