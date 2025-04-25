@@ -19,6 +19,7 @@
         "redhat.vscode-yaml",
         "shardulm94.trailing-spaces",
         "shopify.ruby-lsp",
-        "sianglim.slim"
+        "sianglim.slim",
+        "Zignd.html-css-class-completion"
     ]
 }
