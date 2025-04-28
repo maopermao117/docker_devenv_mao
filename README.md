@@ -11,6 +11,7 @@
 - Ruby 3.2.8
 - Rails 7.1.3
 - PostgreSQL 15
+- TailwindCSS v4 スタンドアローン版で動作（Node.js不要・軽量構成）
 - Docker + Docker Compose を使用
 - 初回実行時に `rails new` でアプリ自動作成！
 
@@ -382,6 +383,57 @@ docker compose up --build
 4. あとは通常通り Rails の開発ができる！
 
 ---
+
+## 🌐 ブラウザで動作確認
+
+起動後、ブラウザを開いて以下のURLにアクセスしてください：
+
+👉 http://localhost:3000
+
+> この時点ではTailwindCSS v4が入っていません。次に進んで入れてみましょう！
+
+---
+
+## 🛠 TailwindCSS セットアップガイド
+
+このテンプレートは、**TailwindCSS v4 スタンドアローン版**を使ってスタイルを書けるようになっています。  
+Node.js / npmは不要です！
+
+---
+
+### ✅ 事前準備(TailwindCSS スタンドアローン版のダウンロード方法)
+
+まず、**コンテナ内**で TailwindCSS CLI（スタンドアローン版）をダウンロードします。
+
+CPUアーキテクチャによってダウンロード先が違うので、自分のPCに合わせて選んでください。
+
+以下のコマンドをリモートエクスプローラーでwebコンテナに入り、ターミナルで実行してください。
+
+**（Mac M1/M2/M3ユーザー向け）**
+```bash
+curl -o /usr/local/bin/tailwindcss -L https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-arm64
+chmod +x /usr/local/bin/tailwindcss
+```
+
+**（Mac Intel/Windowsユーザー向け）**
+```bash
+curl -o /usr/local/bin/tailwindcss -L https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
+chmod +x /usr/local/bin/tailwindcss
+```
+
+### ✅ TailwindCSS ビルド・監視コマンド
+以下のコマンドを実行してください。
+```bash
+tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/stylesheets/tailwind.css --watch
+```
+
+### Tailwindの動作確認
+起動後、ブラウザを開いて以下のURLにアクセスしてください：
+
+👉 http://localhost:3000
+
+さっきと違う感じになってたら動作成功！！！！
+
 
 ## 📅 注意事項・ヒント
 

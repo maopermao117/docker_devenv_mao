@@ -31,5 +31,5 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
-# 初回以外は通常Railsサーバーとして起動.
-CMD ["rails", "server", "-b", "0.0.0.0"]
+# 初回以外は通常Railsサーバーとして起動.今は手動起動したいからコメントアウト
+# CMD ["rails", "server", "-b", "0.0.0.0"]
