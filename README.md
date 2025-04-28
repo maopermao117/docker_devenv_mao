@@ -386,58 +386,55 @@ docker compose up --build
 
 ## 🌐 ブラウザで動作確認
 
-起動後、ブラウザを開いて以下のURLにアクセスしてください：
+まずコンテナ起動後、ブラウザで以下にアクセスしてみましょう：
 
 👉 http://localhost:3000
 
-> この時点ではTailwindCSS v4が入っていません。次に進んで入れてみましょう！
+この時点では、**ただの色なしテキストだけ**のページが表示されます。
+
+> ※ まだ TailwindCSS は反映されていません。この後セットアップします！
 
 ---
 
-## 🛠 TailwindCSS セットアップガイド
+## 🛠 TailwindCSS セットアップ手順
 
-このテンプレートは、**TailwindCSS v4 スタンドアローン版**を使ってスタイルを書けるようになっています。  
-Node.js / npmは不要です！
+このテンプレートは、**TailwindCSS v4 スタンドアローン版**に対応しています。
+以下の手順でスタイルを有効にしましょう！ 
 
----
-
-### ✅ 事前準備(TailwindCSS スタンドアローン版のダウンロード方法)
-
-まず、**コンテナ内**で TailwindCSS CLI（スタンドアローン版）をダウンロードします。
-
-CPUアーキテクチャによってダウンロード先が違うので、自分のPCに合わせて選んでください。
-
-以下のコマンドをリモートエクスプローラーでwebコンテナに入り、ターミナルで実行してください。
-
-**（Mac M1/M2/M3ユーザー向け）**
+### ① 初期設定コマンドを実行
+まず、bin/dev スクリプトを作成します。
 ```bash
-curl -o /usr/local/bin/tailwindcss -L https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-arm64
-chmod +x /usr/local/bin/tailwindcss
+mkdir -p bin
+echo -e '#!/bin/bash\nexec foreman start -f Procfile.dev' > bin/dev
+chmod +x bin/dev
 ```
+これで TailwindCSS を含めたサーバー起動ができる準備が整います。
 
-**（Mac Intel/Windowsユーザー向け）**
+
+### ② サーバーを起動する
+続けて以下のコマンドを実行してください。
 ```bash
-curl -o /usr/local/bin/tailwindcss -L https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
-chmod +x /usr/local/bin/tailwindcss
+bin/dev
 ```
+これで
+✅ Railsサーバー起動
+✅ TailwindCSSのビルド＆監視
+が**まとめて同時に**走るようになります！
 
-### ✅ TailwindCSS ビルド・監視コマンド
-以下のコマンドを実行してください。
-```bash
-tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/stylesheets/tailwind.css --watch
-```
 
-### Tailwindの動作確認
-起動後、ブラウザを開いて以下のURLにアクセスしてください：
+## 🚀 TailwindCSS 動作確認
+もう一度ブラウザで以下にアクセスしてください：
 
 👉 http://localhost:3000
 
-さっきと違う感じになってたら動作成功！！！！
+もし、色付きやスタイリングされたページになっていたら
+→ TailwindCSSが正常に動いている証拠です！🎉
+> 今後コンテナを停止し再起動した場合は必ず bin/dev を実行しましょう！
 
 
 ## 📅 注意事項・ヒント
 
-- `rails_dev` の中身は実時にコンテナと同期されます
+- `rails_dev` の中身はコンテナと同期されます
 - 起動し直したいときは `docker compose down -v` で DB も初期化
 - VSCode Remote Containers 拡張機能を入れておくと便利
 
@@ -454,4 +451,4 @@ tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets
 ## 作成者
 
 和田ゼミ生：まお
-更新日：2025 年 4 月 24 日
+最終更新日：2025 年 4 月 28 日
