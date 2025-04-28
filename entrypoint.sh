@@ -20,6 +20,8 @@ if [ ! -f "Gemfile" ]; then
   cp /rails-temp/hellow.html.erb ./app/views/home/hellow.html.erb
   #Rails復習.mdのコピー
   cp /rails-temp/Railsの復習用.md .
+  #Tailwindのビルドコマンド.mdのコピー
+  cp /rails-temp/Tailwindのビルドコマンド.md .
   #tailwind.config.jsのコピー
   cp /rails-temp/tailwind.config.js .
   #application.html.erbのコピー
@@ -29,7 +31,7 @@ if [ ! -f "Gemfile" ]; then
 fi
 
 
-# tailwindcssが存在しなければダウンロードする
+# tailwindcssが存在しなければダウンロードする(必須)
 if [ ! -f /usr/local/bin/tailwindcss ]; then
   ARCH=$(uname -m)
   if [ "$ARCH" = "x86_64" ]; then
@@ -47,7 +49,7 @@ if [ ! -f /usr/local/bin/tailwindcss ]; then
 fi
 
 
-# foremanが入ってなければインストール
+# foremanのインストール（今は使ってないけど）
 if ! gem list -i foreman > /dev/null 2>&1; then
   echo "Installing foreman..."
   gem install foreman --no-document
@@ -55,14 +57,5 @@ fi
 
 # 毎回Railsサーバー起動前にpidファイル削除（←ここは毎回必要）
 rm -f tmp/pids/server.pid
-
-# TailwindCSSをforemanで管理したい
-if [ ! -f Procfile.dev ]; then
-  echo "Creating Procfile.dev..."
-  cat <<EOF > Procfile.dev
-web: bin/rails server -b 0.0.0.0
-css: tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/stylesheets/tailwind.css --watch
-EOF
-fi
 
 exec "$@"
