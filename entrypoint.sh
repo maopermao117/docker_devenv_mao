@@ -28,6 +28,8 @@ if [ ! -f "Gemfile" ]; then
   cp /rails-temp/application.html.erb ./app/views/layouts/application.html.erb
   #application.tailwind.cssのコピー
   cp /rails-temp/application.tailwind.css ./app/assets/stylesheets/application.tailwind.css
+  #TailwindとdaisyUIの使い方.mdのコピー
+  cp /rails-temp/tailwindとdaisyUIの勉強.md .
 fi
 
 
@@ -46,6 +48,18 @@ if [ ! -f /usr/local/bin/tailwindcss ]; then
   fi
   chmod +x /usr/local/bin/tailwindcss
   echo "✔️ TailwindCSS installed successfully!"
+fi
+
+# daisyUIが存在しなければダウンロードする（必須）
+cd ./app/assets/stylesheets
+if [ ! -f "daisyui.js" ]; then
+  echo "Downloading daisyUI..."
+  curl -sLO https://github.com/saadeghi/daisyui/releases/latest/download/daisyui.js
+fi
+
+if [ ! -f "daisyui-theme.js" ]; then
+  echo "Downloading daisyUI Theme..."
+  curl -sLO https://github.com/saadeghi/daisyui/releases/latest/download/daisyui-theme.js
 fi
 
 

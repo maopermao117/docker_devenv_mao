@@ -12,6 +12,7 @@
 - Rails 7.1.3
 - PostgreSQL 15
 - TailwindCSS v4 スタンドアローン版で動作（Node.js不要・軽量構成）
+- daisyUI 5.0.28
 - Docker + Docker Compose を使用
 - 初回実行時に `rails new` でアプリ自動作成！
 
