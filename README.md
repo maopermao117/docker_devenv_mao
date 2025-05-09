@@ -7,7 +7,8 @@
 ---
 
 ## 🎥解説動画を今週UP予定！
-わからない人はそっちみてね
+
+▶ [動画で環境構築を見る（YouTube）](https://www.youtube.com/watch?v=uIPmJGIqX9o)
 
 ## 🛠 構成概要
 
