@@ -7,11 +7,9 @@
   "emmet.triggerExpansionOnTab": true,
   "auto-rename-tag.activationOnLanguage": ["*"],
   "files.associations": {
-    "*.html.erb": "html",
-    "*.css": "css"
+    "*.html.erb": "html.erb",
+    "*.css": "tailwindcss"
   },
-  "html-css-class-completion.includeGlobPattern": "**/*.css",
-  "html-css-class-completion.enableEmmetSupport": true,
   "editor.quickSuggestions": {
     "strings": true
   },
@@ -22,5 +20,12 @@
   "rubyLsp.enabled": true,
   "rubyLsp.useBundler": true,
   "workbench.iconTheme": "material-icon-theme",
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "tailwindCSS.includeLanguages": {
+		"erb": "html",
+		"html.erb": "html"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	}
 }

@@ -1,0 +1,95 @@
+{
+  "Rails form_with": {
+    "prefix": "form_with",
+    "body": [
+      "<%= form_with url: '$1パス', method: :post, local: true do |f| %>",
+      "  $0",
+      "<% end %>"
+    ],
+    "description": "Rails 7 form_with with url option"
+  },
+  "Rails link_to": {
+    "prefix": "link_to",
+    "body": [
+      "<%= link_to '$1テキスト', '$2パス', class='$3' %>"
+    ],
+    "description": "Rails link_to helper"
+  },
+  "Rails render partial": {
+    "prefix": "render",
+    "body": [
+      "<%= render '$:なんとか' %>"
+    ],
+    "description": "Rails partial render"
+  },
+  "Rails flash message block": {
+    "prefix": "flash",
+    "body": [
+      "<% flash.each do |key, message| %>",
+      "  <div class=\"flash <%= key %>\"><%= message %></div>",
+      "<% end %>"
+    ],
+    "description": "Rails flash message display block"
+  },
+  "Rails each block": {
+    "prefix": "each",
+    "body": [
+      "<% @$1.each do |$2| %>",
+      "  $0",
+      "<% end %>"
+    ],
+    "description": "Rails each iteration block"
+  },
+  "Rails if else block": {
+    "prefix": "ifelse",
+    "body": [
+      "<% if $1 %>",
+      "  $0",
+      "<% else %>",
+      "  ",
+      "<% end %>"
+    ],
+    "description": "Rails if else block"
+  },
+  "Rails image_tag": {
+    "prefix": "image_tag",
+    "body": [
+      "<%= image_tag '$1' %>"
+    ],
+    "description": "Rails image tag helper"
+  },
+  "Tailwind VStack": {
+    "prefix": "vstack",
+    "body": [
+      "<div class=\"flex flex-col items-center space-y-4\">",
+      "  $0",
+      "</div>"
+    ],
+    "description": "TailwindのVstack風"
+  },
+  "Tailwind HStack": {
+    "prefix": "hstack",
+    "body": [
+      "<div class=\"flex flex-row items-center justify-center space-x-4\">",
+      "  $0",
+      "</div>"
+    ],
+    "description": "TailwindでHstack風"
+  },
+  "Tailwind Spacer": {
+    "prefix": "spacer",
+    "body": [
+      "<div class=\"flex-grow\"></div>"
+    ],
+    "description": "Tailwindの擬似的spacer"
+  },
+  "Tailwind Text Template": {
+    "prefix": "text",
+    "body": [
+      "<div class=\"text-left text-base font-normal text-gray-800\">",
+      "  $0",
+      "</div>"
+    ],
+    "description": "Tailwind基本テキストスタイル（位置・サイズ・太さ・テキストカラー）"
+  }
+}

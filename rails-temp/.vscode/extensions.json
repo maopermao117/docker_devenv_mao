@@ -7,7 +7,6 @@
         "bung87.vscode-gemfile",
         "christian-kohler.path-intellisense",
         "donjayamanne.githistory",
-        "ecmel.vscode-html-css",
         "esbenp.prettier-vscode",
         "formulahendry.auto-close-tag",
         "formulahendry.auto-rename-tag",
@@ -20,6 +19,7 @@
         "shardulm94.trailing-spaces",
         "shopify.ruby-lsp",
         "sianglim.slim",
-        "Zignd.html-css-class-completion"
+        "bradlc.vscode-tailwindcss",
+        "PKief.material-icon-theme"
     ]
 }
