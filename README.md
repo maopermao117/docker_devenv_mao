@@ -8,10 +8,9 @@
 
 ## 🎥 YouTubeの解説動画を見ながら進めてね
 
-[![動画を見る](https://img.youtube.com/vi/uIPmJGIqX9o/hqdefault.jpg)](https://www.youtube.com/watch?v=uIPmJGIqX9o)
+[![動画を見る](https://img.youtube.com/vi/CK0uJU2ahs0/hqdefault.jpg)](https://www.youtube.com/watch?v=CK0uJU2ahs0)
 
 上の画像をクリックすると、動画が最初から再生されます。
-5/14にフルバージョンをUP予定です。
 
 
 ## 🛠 構成概要
