@@ -74,6 +74,8 @@ if ! gem list -i foreman > /dev/null 2>&1; then
   gem install foreman --no-document
 fi
 
+set -e
+
 # 毎回Railsサーバー起動前にpidファイル削除（←ここは毎回必要）
 rm -f tmp/pids/server.pid
 
