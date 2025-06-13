@@ -10,6 +10,8 @@ RUN apt-get update -qq && apt-get install -y \
   libpq-dev \
   git \
   libyaml-dev \
+  tini \
+  psmisc \
   && rm -rf /var/lib/apt/lists/*
 
 # Node.js + Yarn（この順番が大事）
@@ -29,7 +31,9 @@ WORKDIR /app_dev
 # entrypointスクリプトをコピー.
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
+
+# Tini経由でentrypointを実行（PID 1対策）
+ENTRYPOINT ["/usr/bin/tini", "--", "entrypoint.sh"]
 
 # 初回以外は通常Railsサーバーとして起動.今は手動起動したいからコメントアウト
 CMD ["rails", "server", "-b", "0.0.0.0"]
