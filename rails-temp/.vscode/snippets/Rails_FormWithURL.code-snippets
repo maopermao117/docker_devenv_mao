@@ -1,0 +1,41 @@
+{
+  "パスを明示的に指定するform_with": {
+    "prefix": "form_with",
+    "body": [
+      "<%= form_with url: '$1パス', method: :post, local: true do |f| %>",
+      "  $0",
+      "<% end %>"
+    ],
+    "description": "postするときに使う"
+  },
+  "Input Field (Tailwind使用)": {
+    "prefix": "textfield",
+    "body": [
+      "<%= text_field_tag :パラメータ$1, Value$2, placeholder: \"$3\", class: \"input input-bordered w-full\" %>"
+    ],
+    "description": "第1引数がパラメータ、第2引数がvalue、第3引数がプレースホルダ"
+  },
+  "Textarea (Tailwind使用)": {
+    "prefix": "textarea",
+    "body": [
+      "<%= text_area_tag :パラメータ$1, Value$2, rows: 行数$3, cols: 列数$4, placeholder: \"$5\", class: \"textarea textarea-primary w-full\" %>"
+    ],
+    "description": "第1引数がパラメータ、第2引数がvalue、第3引数で行数指定、第4引数で列数指定、第5引数でプレースホルダ"
+  },
+  "Submit Button (Tailwind使用)": {
+    "prefix": "submit",
+    "body": [
+      "<%= submit_tag \"$1\", class: \"btn btn-primary\" %>"
+    ],
+    "description": "第1引数が表示したい文字"
+  },
+  "button_to (Tailwind使用)": {
+    "prefix": "button_to",
+    "body": [
+      "<%= button_to $1, method: :post, class: \"$2\" do %>",
+      "  $0",
+      "<% end %>"
+    ],
+    "description": "第1引数は_pathヘルパー、第2引数でTailwind書く"
+  }
+}

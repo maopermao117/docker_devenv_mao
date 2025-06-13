@@ -362,7 +362,10 @@ volumes:
 > VSCode で rails_setup フォルダ開いてると、ターミナルの部分に 〇〇 rails_setup ってなってるはず！！！
 
 ```bash
-docker compose up --build
+docker compose build --no-cache
+```
+```bash
+docker compose up
 ```
 
 これで自動的に：

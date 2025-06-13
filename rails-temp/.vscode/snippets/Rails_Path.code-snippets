@@ -1,0 +1,128 @@
+{
+	"index pathヘルパー": {
+		"prefix": "index_path",
+		"body": [
+			"複数形$1_path"
+		],
+		"description": "一覧ページへのパス(indexアクション) 例: users_path, HTTPメゾットはGET"
+	},
+	"show pathヘルパー": {
+		"prefix": "show_path",
+		"body": [
+			"単数形$1_path(モデル$2)"
+		],
+		"description": "詳細ページへのパス(showアクション), ()内ははモデル, 例: user_path(@user), HTTPメゾットはGET"
+	},
+	"new pathヘルパー": {
+		"prefix": "new_path",
+		"body": [
+			"new_単数形$1_path"
+		],
+		"description": "新規作成ページへのパス(newアクション) 例: new_user_path, HTTPメゾットはGET"
+	},
+	"create pathヘルパー": {
+		"prefix": "create_path",
+		"body": [
+			"複数形$1_path"
+		],
+		"description": "作成送信先のパス(createアクション) 例: users_path, HTTPメゾットはPOSTなのでmethod: :post指定"
+	},
+	"edit pathヘルパー": {
+		"prefix": "edit_path",
+		"body": [
+			"edit_単数形$1_path(モデル$2)"
+		],
+		"description": "編集ページへのパス(editアクション), ()内ははモデル, 例: edit_user_path(@user), HTTPメゾットはGET"
+	},
+	"update pathヘルパー": {
+		"prefix": "update_path",
+		"body": [
+			"単数形$1_path(モデル$2)"
+		],
+		"description": "更新送信先のパス(updateアクション), ()内ははモデル, 例: user_path(@user), HTTPメゾットはPATCHなのでmethod: :patch指定"
+	},
+	"destroy pathヘルパー": {
+		"prefix": "destroy_path",
+		"body": [
+			"単数形$1_path(モデル$2)"
+		],
+		"description": "削除送信先のパス(destroyアクション), ()内ははモデル, 例: user_path(@user), HTTPメゾットはDELETEなのでmethod: :delete指定"
+	},
+	"1階層 on: :member pathヘルパー": {
+		"prefix": "member_path",
+		"body": [
+			"アクション名$1_単数形$2_path(モデル$3)"
+		],
+		"description": "on: :memberで追加されたアクションのパス, 例: like_user_path(@user), HTTPメソッドはresources参照"
+	},
+	"1階層 on: :collection pathヘルパー": {
+		"prefix": "collection_path",
+		"body": [
+			"アクション名$1_複数形$2_path"
+		],
+		"description": "on: :collectionで追加されたアクションのパス, 例: search_users_path, HTTPメソッドはresources参照"
+	},
+	"2階層 index pathヘルパー": {
+		"prefix": "index_path_2",
+		"body": [
+			"親単数形$1_子複数形$2_path(親モデル$3)"
+		],
+		"description": "2階層：子リソースの一覧ページへのパス（indexアクション） 例: user_posts_path(@user)"
+	},
+	"2階層 show pathヘルパー": {
+		"prefix": "show_path_2",
+		"body": [
+			"親単数形$1_子単数形$2_path(親モデル$3, 子モデル$4)"
+		],
+		"description": "2階層：子リソースの詳細ページへのパス（showアクション） 例: user_post_path(@user, @post)"
+	},
+	"2階層 new pathヘルパー": {
+		"prefix": "new_path_2",
+		"body": [
+			"new_親単数形$1_子単数形$2_path(親モデル$3)"
+		],
+		"description": "2階層：子リソースの新規作成ページへのパス（newアクション） 例: new_user_post_path(@user)"
+	},
+	"2階層 create pathヘルパー": {
+		"prefix": "create_path_2",
+		"body": [
+			"親単数形$1_子複数形$2_path(親モデル$3)"
+		],
+		"description": "2階層：子リソースの作成送信先のパス（createアクション） 例: user_posts_path(@user), HTTPメソッドはPOST"
+	},
+	"2階層 edit pathヘルパー": {
+		"prefix": "edit_path_2",
+		"body": [
+			"edit_親単数形$1_子単数形$2_path(親モデル$3, 子モデル$4)"
+		],
+		"description": "2階層：子リソースの編集ページへのパス（editアクション） 例: edit_user_post_path(@user, @post)"
+	},
+	"2階層 update pathヘルパー": {
+		"prefix": "update_path_2",
+		"body": [
+			"親単数形$1_子単数形$2_path(親モデル$3, 子モデル$4)"
+		],
+		"description": "2階層：子リソースの更新送信先のパス（updateアクション） 例: user_post_path(@user, @post), HTTPメソッドはPATCH"
+	},
+	"2階層 destroy pathヘルパー": {
+		"prefix": "destroy_path_2",
+		"body": [
+			"親単数形$1_子単数形$2_path(親モデル$3, 子モデル$4)"
+		],
+		"description": "2階層：子リソースの削除送信先のパス（destroyアクション） 例: user_post_path(@user, @post), HTTPメソッドはDELETE"
+	},
+	"2階層 on: :member pathヘルパー": {
+		"prefix": "member_path_2",
+		"body": [
+			"アクション名$1_親単数形$2_子単数形$3_path(親モデル$4, 子モデル$5)"
+		],
+		"description": "2階層：on: :memberで追加されたアクションのパス 例: like_user_post_path(@user, @post)"
+	},
+	"2階層 on: :collection pathヘルパー": {
+		"prefix": "collection_path_2",
+		"body": [
+			"アクション名$1_親単数形$2_子複数形$3_path(親モデル$4)"
+		],
+		"description": "2階層：on: :collectionで追加されたアクションのパス 例: search_user_posts_path(@user)"
+	}
+}

@@ -1,0 +1,78 @@
+{
+	"Rails render": {
+		"prefix": "render",
+		"body": [
+			"render '$1'"
+		],
+		"description": "Rails render view"
+	},
+	"Rails redirect_to": {
+		"prefix": "redirect_to",
+		"body": [
+			"redirect_to $1_path, notice: '$2'"
+		],
+		"description": "Rails redirect_to helper"
+	},
+	"Rails before_action": {
+		"prefix": "before_action",
+		"body": [
+			"before_action :$1, only: [:show, :edit, :update, :destroy]"
+		],
+		"description": "Rails before_action filter"
+	},
+	"Rails find record": {
+		"prefix": "find",
+		"body": [
+			"$1 = $2.find_by($3: params[:id])"
+		],
+		"description": "Rails find record by id"
+	},
+	"Rails new record": {
+		"prefix": "new",
+		"body": [
+			"$1 = $2.new"
+		],
+		"description": "Rails new record"
+	},
+	"Rails create record": {
+		"prefix": "create",
+		"body": [
+			"$1 = $2.new($2_params)",
+			"if $1.save",
+			"  redirect_to $2_path($1), notice: '$2 was successfully created.'",
+			"else",
+			"  render :new, status: :unprocessable_entity",
+			"end"
+		],
+		"description": "Rails create record with validation"
+	},
+	"Rails update record": {
+		"prefix": "update",
+		"body": [
+			"if $1.update($2_params)",
+			"  redirect_to $3_path($1), notice: '$2 was successfully updated.'",
+			"else",
+			"  render :edit, status: :unprocessable_entity",
+			"end"
+		],
+		"description": "Rails update record"
+	},
+	"Rails destroy record": {
+		"prefix": "destroy",
+		"body": [
+			"$1.destroy",
+			"redirect_to $2_url, notice: '$3 was successfully destroyed.'"
+		],
+		"description": "Rails destroy record"
+	},
+	"params(form_withとセット利用)": {
+		"prefix": "form_with_params",
+		"body": [
+			"private",
+			"def メゾット名$1_params",
+			"  params.require(:form_withで指定したモデル名$2).permit(:受け取るパラメータ$3)",
+			"end"
+		],
+		"description": "第1引数はメゾット名、第2引数がform_withで指定したモデル名、第3引数がform_with内で指定したパラメータ。パラメータの使用例: メゾット名_params[:受け取るパラメータ名]"
+	}
+}

@@ -1,0 +1,127 @@
+{
+	"1階層resources 構文": {
+		"prefix": "resources_1",
+		"body": [
+			"resources :複数形$1",
+			"# 自動生成されるRESTfulルート例:",
+			"# GET    /複数形$1          => 複数形$1#index",
+			"# GET    /複数形$1/new     => 複数形$1#new",
+			"# POST   /複数形$1         => 複数形$1#create",
+			"# GET    /複数形$1/:id     => 複数形$1#show",
+			"# GET    /複数形$1/:id/edit => 複数形$1#edit",
+			"# PATCH  /複数形$1/:id     => 複数形$1#update",
+			"# DELETE /複数形$1/:id     => 複数形$1#destroy"
+		],
+		"description": "1階層の7つのパスを生成（index, show, new, create, edit, update, destroy）。複数形_controllerにアクションを作成するだけ"
+	},
+	"1階層resources on: :member 構文": {
+		"prefix": "resources_1 on: :member",
+		"body": [
+			"resources :複数形$1 do",
+			"  HTTPメソッド$2 'アクション名$3', on: :member",
+			"end",
+			"",
+			"# 生成されるパス",
+			"# GET    /複数形$1           => 複数形$1#index",
+			"# GET    /複数形$1/new       => 複数形$1#new",
+			"# POST   /複数形$1           => 複数形$1#create",
+			"# GET    /複数形$1/:id       => 複数形$1#show",
+			"# GET    /複数形$1/:id/edit  => 複数形$1#edit",
+			"# PATCH  /複数形$1/:id       => 複数形$1#update",
+			"# DELETE /複数形$1/:id       => 複数形$1#destroy",
+			"# HTTPメソッド   /複数形$1/:id/アクション名    => 複数形$1#アクション名（on: :member 追加アクション）"
+		],
+		"description": "HTTPメソッド（get/post/patch/delete）を指定して、パスを1件追加(合計8つのパスを作成)。複数形_controllerにアクション(追加アクションも)を作成するだけ"
+	},
+	"1階層resources + collection do 構文": {
+		"prefix": "resources_1_collection do",
+		"body": [
+			"resources :複数形$1, only: [] do",
+			"  collection do",
+			"    HTTPメソッド$2 :アクション名$3",
+			"  end",
+			"end",
+			"",
+			"# only: [] に指定したアクション(index, show, new, create, edit, update, destroy)は自動生成されない。",
+			"# これにより、collection内で必要なアクションだけを自由に追加できる。",
+			"",
+			"# 生成されるパス([]に指定してないので)",
+			"# GET    /複数形$1           => 複数形$1#index",
+			"# GET    /複数形$1/new       => 複数形$1#new",
+			"# POST   /複数形$1           => 複数形$1#create",
+			"# GET    /複数形$1/:id       => 複数形$1#show",
+			"# GET    /複数形$1/:id/edit  => 複数形$1#edit",
+			"# PATCH  /複数形$1/:id       => 複数形$1#update",
+			"# DELETE /複数形$1/:id       => 複数形$1#destroy",
+			"# HTTPメソッド   /複数形$1/アクション名    => 複数形$1#アクション名（on: :collection 追加アクション）"
+		],
+		"description": "HTTPメソッド（get/post/patch/delete）を指定して、パスを1件追加。複数形_controllerにアクション(追加アクションも)を作成"
+	},
+	"2階層resources 構文": {
+		"prefix": "resources_2",
+		"body": [
+			"resources :親複数形$1 do",
+			"  resources :子複数形$2",
+			"end",
+			"",
+			"# 生成されるパス",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2           => 子複数形$2#index",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2/new       => 子複数形$2#new",
+			"# POST   /親複数形$1/:親単数形_id/子複数形$2           => 子複数形$2#create",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2/:id       => 子複数形$2#show",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2/:id/edit  => 子複数形$2#edit",
+			"# PATCH  /親複数形$1/:親単数形_id/子複数形$2/:id       => 子複数形$2#update",
+			"# DELETE /親複数形$1/:親単数形_id/子複数形$2/:id       => 子複数形$2#destroy"
+		],
+		"description": "2階層のネストされた7つのパスを生成。子の複数形_controllerにアクションを作成するだけ。親id(:単数形$1_id)がパスに含まれる点に注意。"
+	},
+	"2階層resources on: :member 構文": {
+		"prefix": "resources_2 on: :member",
+		"body": [
+			"resources :親複数形$1 do",
+			"  resources :子複数形$2 do",
+			"    HTTPメソッド$3 'アクション名$4', on: :member",
+			"  end",
+			"end",
+			"",
+			"# 生成されるパス",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2           => 子複数形$2#index",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2/new       => 子複数形$2#new",
+			"# POST   /親複数形$1/:親単数形_id/子複数形$2           => 子複数形$2#create",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2/:id       => 子複数形$2#show",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2/:id/edit  => 子複数形$2#edit",
+			"# PATCH  /親複数形$1/:親単数形_id/子複数形$2/:id       => 子複数形$2#update",
+			"# DELETE /親複数形$1/:親単数形_id/子複数形$2/:id       => 子複数形$2#destroy",
+			"# HTTPメソッド   /親複数形$1/:親単数形_id/子複数形$2/:id/アクション名    => 子複数形$2#アクション名（on: :member 追加アクション）"
+		],
+		"description": "2階層の子リソースに対してHTTPメソッド（get/post/patch/delete）を指定して、パスを1件追加（合計8つのパスを作成）。子の複数形_controllerにアクション（追加アクションも）を作成するだけ。"
+	},
+	"2階層resources + collection do 構文": {
+		"prefix": "resources_2_collection do",
+		"body": [
+			"resources :親複数形$1 do",
+			"  resources :子複数形$2, only: [] do",
+			"    collection do",
+			"      HTTPメソッド$3 :アクション名$4",
+			"    end",
+			"  end",
+			"end",
+			"",
+			"# only: [] に指定したアクション(index, show, new, create, edit, update, destroy)は自動生成されない。",
+			"# これにより、collection内で必要なアクションだけを自由に追加できる。",
+			"",
+			"# もしonly: []を省略した場合（初期状態）、以下の7つのパスが自動生成される：",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2           => 子複数形$2#index",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2/new       => 子複数形$2#new",
+			"# POST   /親複数形$1/:親単数形_id/子複数形$2           => 子複数形$2#create",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2/:id       => 子複数形$2#show",
+			"# GET    /親複数形$1/:親単数形_id/子複数形$2/:id/edit  => 子複数形$2#edit",
+			"# PATCH  /親複数形$1/:親単数形_id/子複数形$2/:id       => 子複数形$2#update",
+			"# DELETE /親複数形$1/:親単数形_id/子複数形$2/:id       => 子複数形$2#destroy",
+			"",
+			"# collection内の追加アクション例：",
+			"# HTTPメソッド   /親複数形$1/:親単数形_id/子複数形$2/アクション名    => 子複数形$2#アクション名（on: :collection 追加アクション）"
+		],
+		"description": "HTTPメソッド（get/post/patch/delete）を指定して、パスを1件追加。子の複数形_controllerにアクション（追加アクションも）を作成するだけ。only: [] で必要なアクションのみ追加可能。"
+	}
+}

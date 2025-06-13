@@ -5,5 +5,12 @@
       "<!-- $1 -->"
     ],
     "description": "HTMLのコメントアウトを書く"
+  },
+    "CSS コメントアウト": {
+    "prefix": "cmt",
+    "body": [
+      "/* $1 */"
+    ],
+    "description": "CSSのコメントアウトを書く"
   }
 }
