@@ -1,0 +1,39 @@
+{
+  "モデルフォーム（form_with）": {
+    "prefix": "form_with_model",
+    "body": [
+      "<%= form_with model: @モデル$1, url: pathヘルパーの指定$2, local: true do |f| %>",
+      "  $0",
+      "<% end %>"
+    ],
+    "description": "モデルバインド用のform_withテンプレート（POST送信用）。第1引数：モデル名。第2引数：パスヘルパー。fでインスタンスにアクセス可能"
+  },
+  "モデル用テキストフィールド（Tailwind）": {
+    "prefix": "textfield_model",
+    "body": [
+      "<%= f.text_field :$1, placeholder: \"$2\", class: \"input input-bordered w-full\" %>"
+    ],
+    "description": "モデルのテキストフィールド（Tailwind対応）。第1引数：カラム名。第2引数：プレースホルダ"
+  },
+  "モデル用パスワードフィールド（Tailwind）": {
+    "prefix": "passwordfield_model",
+    "body": [
+      "<%= f.password_field :$1, placeholder: \"$2\", class: \"input input-bordered w-full\" %>"
+    ],
+    "description": "モデルのパスワード入力フィールド（Tailwind対応）。第1引数：カラム名。第2引数：プレースホルダ"
+  },
+  "モデル用テキストエリア（Tailwind）": {
+    "prefix": "textarea_model",
+    "body": [
+      "<%= f.text_area :$1, rows: $2, cols: $3, placeholder: \"$4\", class: \"textarea textarea-primary w-full\" %>"
+    ],
+    "description": "モデルのテキストエリア（Tailwind対応）。第1引数：カラム名。第2引数：行数。第3引数：列数。第4引数：プレースホルダ"
+  },
+  "モデル用送信ボタン（Tailwind）": {
+    "prefix": "submit_model",
+    "body": [
+      "<%= f.submit \"$1\", class: \"btn btn-primary\" %>"
+    ],
+    "description": "モデルフォーム用の送信ボタン（Tailwind対応）。第1引数：ボタン表示名"
+  }
+}

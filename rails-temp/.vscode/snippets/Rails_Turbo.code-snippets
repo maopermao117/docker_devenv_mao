@@ -1,0 +1,50 @@
+{
+	"Turbo Frame": {
+		"prefix": "turbo_frame",
+		"body": [
+			"<%= turbo_frame_tag 文字列でpath指定$1 do %>",
+			"  <%= render partial: \"フォルダ名$2/使用パーシャル$3\", locals: { パーシャルで使う変数名$4: コントローラーやビューから渡すインスタンス変数$5 } %>",
+			"<% end %>"
+		],
+		"description": "Turbo Frameは「ページ内の一部分」自動で差し替えられる目印になります。たとえば、「いいねボタン」を含んだ枠を turbo_frame_tag で囲っておけば、いいね処理のあとにその部分だけ最新の状態に自動で更新されます。"
+	},
+	"Turbo Stream": {
+		"prefix": "turbo_stream",
+		"body": [
+			"<%= turbo_stream.replace 文字列でpath指定$1 do %>",
+			"  <%= render partial: \"フォルダ名$2/使用パーシャル$3\", locals: { パーシャルで使う変数名$4: コントローラーやビューから渡すインスタンス変数$5 } %>",
+			"<% end %>"
+		],
+		"description": "Turbo_streamはページの差し替え時に、対応するパーシャルを見つける役割です。"
+	},
+	"Helper Method 定義": {
+		"prefix": "helper_method",
+		"body": [
+			"helper_method :メゾット名$1",
+			"",
+			"def $1",
+			"  $2",
+			"end"
+		],
+		"description": "Controllerで定義したメソッドをViewでも使えるようにするhelper_method定義"
+	},
+	"Turbo button_to（Tailwind使用）": {
+		"prefix": "button_to_turbo",
+		"body": [
+			"<%= button_to $1, method: :post, class: \"$2\", data: { turbo_stream: true } do %>",
+			"  $3",
+			"<% end %>"
+		],
+		"description": "第1引数は_pathヘルパー、第2引数でTailwind書く。method:でHTTPメゾットをかく。"
+	},
+	"Turboのコントローラー設定": {
+  "prefix": "respond_to",
+  "body": [
+    "respond_to do |format|",
+    "  format.turbo_stream",
+    "  format.html { redirect_to $1 }",
+    "end"
+  ],
+  "description": "Turbo StreamとHTMLリダイレクトに対応するrespond_toブロック"
+}
+}

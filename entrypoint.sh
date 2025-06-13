@@ -39,11 +39,8 @@ if [ ! -f "Gemfile" ]; then
   cp /rails-temp/application.tailwind.css ./app/assets/stylesheets/application.tailwind.css
   #TailwindとdaisyUIの使い方.mdのコピー
   cp /rails-temp/tailwindとdaisyUIの勉強.md .
-  #自作スニペットのコピー
-  cp /rails-temp/.vscode/snippets/css.code-snippets .vscode/css.code-snippets
-  cp /rails-temp/.vscode/snippets/erb.code-snippets .vscode/erb.code-snippets
-  cp /rails-temp/.vscode/snippets/html.code-snippets .vscode/html.code-snippets
-  cp /rails-temp/.vscode/snippets/ruby.code-snippets .vscode/ruby.code-snippets
+  # 自作スニペットの一括コピー
+  cp /rails-temp/.vscode/snippets/* .vscode/
 fi
 
 

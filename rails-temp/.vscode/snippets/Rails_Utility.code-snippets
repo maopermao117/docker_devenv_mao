@@ -1,0 +1,59 @@
+{
+  "Rails if else block": {
+    "prefix": "ifelse",
+    "body": [
+      "<% if $1 %>",
+      "  $0",
+      "<% else %>",
+      "  ",
+      "<% end %>"
+    ],
+    "description": "Rails if else block"
+  },
+	"Rails each block": {
+    "prefix": "each",
+    "body": [
+      "<% @$1.each do |$2| %>",
+      "  $0",
+      "<% end %>"
+    ],
+    "description": "簡単each"
+  },
+  "Rails image_tag": {
+    "prefix": "image_tag",
+    "body": [
+      "<%= image_tag '$1' %>"
+    ],
+    "description": "Rails image tag helper"
+  },
+	"Rails link_to": {
+    "prefix": "link_to",
+    "body": [
+      "<%= link_to '$1テキスト', '$2パス', class='$3' %>"
+    ],
+    "description": "押すとリンク先に飛ぶ"
+  },
+	"Rails flash message block": {
+    "prefix": "flash",
+    "body": [
+      "<% flash.each do |key, message| %>",
+      "  <div class=\"flash <%= key %>\"><%= message %></div>",
+      "<% end %>"
+    ],
+    "description": "Rails flash message display block"
+  },
+  "ERB 出力タグ": {
+    "prefix": "erb",
+    "body": [
+      "<%= $0 %>"
+    ],
+    "description": "ERB（<%= %>）タグ"
+  },
+  "ERB 評価タグ": {
+    "prefix": "erb_eval",
+    "body": [
+      "<% $0 %>"
+    ],
+    "description": "ERB（<% %>）タグ（評価のみ）"
+  }
+}
