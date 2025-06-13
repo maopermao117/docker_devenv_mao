@@ -1,6 +1,15 @@
 #!/bin/bash
 set -e
 
+echo ">>> [entrypoint] PID: $$"
+echo ">>> [entrypoint] Showing process list (ps -ef):"
+ps -ef | awk '{printf "%-10s %-5s %-5s %-20s\n", $1, $2, $3, $8}'
+
+echo ">>> [entrypoint] Showing process tree (pstree):"
+pstree -ap
+
+echo ">>> [entrypoint] ----- PIDファイル処理に進みます -----"
+
 # Railsアプリがまだ無いなら作るここは変更しない.
 if [ ! -f "Gemfile" ]; then
   echo "Rails app not found. Creating..."
@@ -67,6 +76,8 @@ if [ ! -f "daisyui-theme.js" ]; then
   curl -sLO https://github.com/saadeghi/daisyui/releases/latest/download/daisyui-theme.js
 fi
 
+echo ">>> [entrypoint] Process tree (pstree):"
+pstree -ap
 
 # foremanのインストール（今は使ってないけど）
 if ! gem list -i foreman > /dev/null 2>&1; then
